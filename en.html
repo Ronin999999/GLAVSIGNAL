@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Интерактивная страница</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-     <style>
+    <style>
         @font-face {
             font-family: 'Intro';
             src: url('intro.otf') format('opentype');
@@ -12,9 +12,9 @@
 
         body {
             background-image: url('fon.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-size: cover; /* Масштабирование изображения, чтобы оно покрыло весь экран */
+            background-position: center; /* Центрирование изображения */
+            background-repeat: no-repeat; /* Избежание повторения изображения */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,47 +22,48 @@
             margin: 0;
         }
 
+
         .main-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 85%; /* Slightly smaller than before */
+            width: 90%; /* Для центровки содержимого */
         }
 
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #0a101e;
-            border-radius: 12px; /* Smaller radius */
-            padding: 8px; /* Smaller padding */
-            box-shadow: 0 3px 6px rgba(0,0,0,0.05), 0 0 8px 4px #ffa500; /* Subtler shadow */
+            background-color: #0a101e; /* Темно-синий фон для контейнера */
+            border-radius: 30px; /* Закругленные углы, увеличенные в два раза */
+            padding: 20px; /* Уменьшенные отступы */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 0 20px 10px #ffa500; /* Свечение */
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(5, 45px); /* Smaller cells */
-            grid-template-rows: repeat(5, 45px);
-            gap: 7px; /* Smaller gaps */
+            grid-template-columns: repeat(5, 110px); /* Уменьшенные размеры ячеек */
+            grid-template-rows: repeat(5, 110px);
+            gap: 19px; /* Уменьшенный зазор между ячейками */
         }
 
         .square {
-            background-color: #238fa9;
-            border-radius: 4px; /* Smaller border radius */
-            transition: background-color 0.5s ease;
+            background-color: #238fa9; /* Аквамариновый цвет ячеек */
+            border-radius: 10px; /* Уменьшенные закругленные углы для квадратов */
+            transition: background-color 0.5s ease; /* Плавный переход цвета */
         }
-        
+
         .button-link {
             display: inline-block;
-            margin-top: 10px;
-            padding: 14px 25px;
+            margin-top: 15px;
+            padding: 25px 40px;;
             border: none;
             border-radius: 6px;
             background-color: black;
             color: white;
             text-shadow: 
                 0 0 5px #ff00ff;  /* Основное розовое свечение */
-            font-size: 14px;
+            font-size: 32px;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 2px 3.5px rgba(0, 0, 0, 0.15);
@@ -85,38 +86,39 @@
         }
 
         button {
-            margin-top: 10px;
-            padding: 10px 18px; /* Reduced padding */
+            margin-top: 25px;
+            padding: 25px 45px; /* Увеличенные отступы */
             border: none;
-            border-radius: 6px; /* Smaller radius */
-            background-color: #000000;
+            border-radius: 15px;
+            background-color: #000000; 
             color: white;
-            font-size: 14px; /* Reduced font size */
+            font-size: 32px; /* Увеличенный размер шрифта */
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 3.5px rgba(0, 0, 0, 0.15); /* Subtler shadow */
-            font-family: 'Intro', sans-serif;
+            transition: all 0.3s ease; /* Плавный переход для всех свойств */
+            box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2); /* Тень для создания эффекта глубины */
+            font-family: 'Intro', sans-serif; /* Применение локального шрифта */
             text-align: center;
-            line-height: 1.1; /* Closer line height */
+            line-height: 1.2; /* Межстрочный интервал для двух строк текста */
         }
 
         button:hover, button:focus {
-            background-color: #0056b3;
-            box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.25); /* Subtle change on hover */
-            transform: translateY(-1px);
+            background-color: #0056b3; /* Темно-синий фон при наведении */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Увеличенная тень при наведении */
+            transform: translateY(-2px); /* Небольшое поднятие кнопки */
         }
 
         button:active {
-            background-color: #004885;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Less shadow on active */
-            transform: translateY(0.5px);
+            background-color: #004885; /* Еще более темный синий при нажатии */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшенная тень при нажатии */
+            transform: translateY(1px); /* Возвращение кнопки в исходное положение */
         }
 
+
         #trap-count-label {
-            margin-top: 20px;
-            font-size: 28px; /* Smaller font size */
+            margin-top: 50px; /* Увеличенное расстояние до счетчика */
+            font-size: 70px;
             color: white;
-            font-family: 'Intro', sans-serif;
+            font-family: 'Intro', sans-serif; /* Применение локального шрифта */
             font-weight: bold;
         }
 
@@ -124,42 +126,41 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 4px 0; /* Smaller margin */
+            margin: 10px 0;
         }
 
         .count-display {
-            width: 35px; /* Smaller width */
+            width: 80px;
             text-align: center;
-            font-size: 35px; /* Smaller font size */
-            font-family: 'Intro', sans-serif;
+            font-size: 80px;
+            font-family: 'Intro', sans-serif; /* Применение локального шрифта */
             color: white;
-            margin: 0 12px; /* Smaller margins */
+            margin: 0 30px;
         }
 
         .icon {
             cursor: pointer;
-            width: 50px; /* Smaller icons */
-            height: 50px;
+            width: 114px;
+            height: 114px;
         }
-
         #loading-text {
             cursor: default;
             text-align: center;
-            margin-bottom: 8px; /* Smaller bottom margin */
-            font-family: 'Intro', sans-serif;
+            margin-bottom: 20px;
+            font-family: 'Intro', sans-serif; /* Применение локального шрифта */
         }
 
-        #loading-text span { /*ТУТ Я МЕНЯЛ*/
+        #loading-text span {
             display: inline-block;
             animation: bounce 0.8s ease-in-out infinite alternate;
-            font-size: 50px; /* Меньший размер шрифта */
+            font-size: 120px;
             color: rgb(209, 178, 5);
-            text-shadow: 0 0.25px 0 #ccc, 0 0.5px 0 #ccc, 0 0.75px 0 #ccc, 0 1px 0 #ccc,
-                        0 1.25px 0 #ccc, 0 1.5px 0 transparent, 0 1.75px 0 transparent, 0 2px 0 transparent,
-                        0 2.25px 0 transparent, 0 2.5px 2.5px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+                        0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+                        0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
             transform-origin: bottom;
         }
-        
+
         #loading-text span:nth-child(1) { animation-delay: 0s; }
         #loading-text span:nth-child(2) { animation-delay: 0.1s; }
         #loading-text span:nth-child(3) { animation-delay: 0.2s; }
@@ -167,21 +168,22 @@
         #loading-text span:nth-child(5) { animation-delay: 0.4s; }
         #loading-text span:nth-child(6) { animation-delay: 0.5s; }
         #loading-text span:nth-child(7) { animation-delay: 0.6s; }
-        
+
         @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0) scale(1);
-                text-shadow: 0 0.25px 0 #ccc, 0 0.5px 0 #ccc, 0 0.75px 0 #ccc, 0 1px 0 #ccc,
-                             0 1.25px 0 #ccc, 0 1.5px 0 transparent, 0 1.75px 0 transparent, 0 2px 0 transparent,
-                             0 2.25px 0 transparent, 0 2.5px 2.5px rgba(0, 0, 0, 0.2);
-            }
-            50% {
-                transform: translateY(-20px) scale(1.2);
+            0% {
+                transform: translateY(0px);
                 text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
                              0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
-                             0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.3);
+                             0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+            }
+            100% {
+                transform: translateY(-20px);
+                text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+                             0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+                             0 9px 0 transparent, 0 50px 25px rgba(0, 0, 0, 0.2);
             }
         }
+
     </style>
 </head>
 <body>
@@ -204,7 +206,6 @@
         <a href="https://1wean.com/casino/list?open=register" target="_blank" class="button-link">GAME HERE</a>
     </div>
     <audio id="sound-effect" src="1.mp3"></audio> <!-- Звуковой эффект для воспроизведения -->
-    
    <script>
     let count = 3; // Начальное количество ловушек
     const countElement = document.getElementById('count');
@@ -280,7 +281,7 @@
                 square.style.backgroundColor = '#0a101e';
                 square.innerHTML = '<div style="width: 100%; height: 100%; background: url(\'star.svg\') center/contain no-repeat;"></div>';
             }, delay);
-            delay += 1000; 
+            delay += 1000; // Задержка 1 секунда
         });
     }
 
